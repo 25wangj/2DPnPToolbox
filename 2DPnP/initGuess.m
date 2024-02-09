@@ -26,7 +26,7 @@ function pose = initGuess(worldPts, rotImgPts, beta)
         b2 = b2 + 2 * i3 * i4;
       end
    end
-   %Find the coefficients for each resultant
+   %Find the coefficients of each resultant
    xcoeffs = [a1^2*c1^3-2*a1*b1*c1^3-4*a1*c1^2*c3^2+4*a1*c1^2*c4^2+b1^2*c1^3+4*b1*c1^2*c3^2-4*b1*c1^2*c4^2+4*c1^3*c2^2-16*c1^2*c2*c3*c4+4*c1*c3^4+8*c1*c3^2*c4^2+4*c1*c4^4,...
        5*a1^2*c1^2*c4-8*a1*b1*c1^2*c4-2*b2*a1*c1^3-2*a1*c1^2*c2*c3-16*a1*c1*c3^2*c4+16*a1*c1*c4^3+3*b1^2*c1^2*c4+2*b2*b1*c1^3-2*b1*c1^2*c2*c3+20*b1*c1*c3^2*c4-12*b1*c1*c4^3+4*a2*c1^3*c2+16*c1^2*c2^2*c4+4*b2*c1^2*c3^2-8*a2*c1^2*c3*c4-4*b2*c1^2*c4^2+4*c1*c2*c3^3-60*c1*c2*c3*c4^2+12*c3^4*c4+24*c3^2*c4^3+12*c4^5,...
        a1^2*b1*c1^2+7*a1^2*c1*c4^2-2*a1*a2*c1^2*c3-2*a1*b1^2*c1^2-2*a1*b1*c1*c3^2-2*a1*b1*c1*c4^2-8*a1*b2*c1^2*c4-6*a1*c1*c2*c3*c4-20*a1*c3^2*c4^2+12*a1*c4^4+a2^2*c1^3+14*a2*c1^2*c2*c4+4*a2*c1*c3^3-28*a2*c1*c3*c4^2+b1^3*c1^2+3*b1^2*c1*c3^2-4*b1^2*c1*c4^2+6*b1*b2*c1^2*c4+4*b1*c1^2*c2^2-22*b1*c1*c2*c3*c4+36*b1*c3^2*c4^2+4*b1*c4^4+b2^2*c1^3-2*b2*c1^2*c2*c3+20*b2*c1*c3^2*c4-12*b2*c1*c4^3-3*c1*c2^2*c3^2+13*c1*c2^2*c4^2+24*c2*c3^3*c4-40*c2*c3*c4^3,...
@@ -47,8 +47,7 @@ function pose = initGuess(worldPts, rotImgPts, beta)
    pos = [x(:)'; y(:)'];
    pose = [0 0 0];
    error = inf;
-   %Find the optimal heading angles for each position and take 
-   %the pose with minimal reprojection error
+   %Find the optimal heading angles for each position and take the pose with minimal reprojection error
    for i=1:size(pos,2)
        num = 0; denom = 0;
        for j=1:len
