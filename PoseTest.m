@@ -54,4 +54,4 @@ title("Rotational Error");
 xlabel("Number of Points");
 ylabel("Average Rotational Error (deg)");
 pbaspect([1.5 1 1]);
-print("Plots/Rotatio    nPlot.eps", "-depsc2");
+print("Plots/RotationPlot.eps", "-depsc2");
