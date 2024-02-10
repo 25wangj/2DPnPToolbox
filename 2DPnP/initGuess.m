@@ -40,9 +40,9 @@ function pose = initGuess(worldPts, rotImgPts, beta)
        -2*a2^2*b1*c1^2+3*a1*a2^2*c1^2-4*a2^2*c1*c3^2+3*a2^2*c1*c4^2+2*a2*b1^2*c1*c3+a2*b1*c1*c2*c4-4*a1*a2*b1*c1*c3+4*a2*b1*c3^3-6*a2*b1*c3*c4^2+3*a2*b2*c1^2*c2-6*a2*b2*c1*c3*c4+5*a2*c1*c2^2*c3-6*a1*a2*c1*c2*c4-12*a2*c2*c3^2*c4+18*a1*a2*c3*c4^2+a1*b1^2*c3^2-2*b1*b2*c1*c2*c3-2*b1*b2*c3^2*c4+a1*b1*c1*c2^2-b1*c2^2*c3^2-3*a1*b1*c2*c3*c4+3*b2^2*c1*c3^2-3*b2*c1*c2^2*c4+3*a1*b2*c1*c2*c3+12*b2*c2*c3*c4^2-6*a1*b2*c3^2*c4-c1*c2^4+3*c2^3*c3*c4,...
        a2^3*c1^2-2*a2^2*b1*c1*c3-3*a2^2*c1*c2*c4+9*a2^2*c3*c4^2+a2*b1^2*c3^2+a2*b1*c1*c2^2-3*a2*b1*c2*c3*c4+3*a2*b2*c1*c2*c3-6*a2*b2*c3^2*c4-b1*b2*c2*c3^2+b2^2*c3^3-b2*c1*c2^3+3*b2*c2^2*c3*c4];
    %Compute the roots of the resultants
-   rx = roots(xcoeffs);
-   ry = roots(ycoeffs);
-   [x,y] = meshgrid(rx(imag(rx) == 0), ry(imag(ry) == 0));
+   rx = roots(ycoeffs);
+   ry = roots(xcoeffs);
+   [x,y] = meshgrid(rx(imag(rx)==0), ry(imag(ry)==0));
    %Each position is a pair of real roots
    pos = [x(:)'; y(:)'];
    pose = [0 0 0];
